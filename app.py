@@ -12,6 +12,11 @@ def index():
     days_left = (last_day - today).days
 
     return render_template('index.html', today = today, last_day = last_day, days_left = days_left)
+
+@app.get('/internships')
+def internships():
+
+    return render_template('internships.html')
     
 if __name__ == '__main__':
     app.run(debug=True)
