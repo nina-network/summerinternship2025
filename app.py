@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from datetime import datetime
+from repositories import internship_data
 
 app = Flask(__name__)
 
@@ -16,7 +17,21 @@ def index():
 @app.get('/internships')
 def internships():
 
-    return render_template('internships.html')
-    
+    all_data = internship_data.all_data()
+
+    return render_template('internships.html', all_data=all_data)
+
+@app.get('/internship/<int:id>')
+def internship(id):
+
+    data = internship_data.internship(id)
+
+    return render_template('internship.html', data=data)
+
+@app.get('/contact')
+def contact():
+
+    return render_template('contact.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

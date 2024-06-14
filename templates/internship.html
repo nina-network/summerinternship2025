@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<center><a href="/internships"><button type="button" class="btn btn-light">Look for more ☜(◕‿◕｡)☜</button></a></center>
+
+<div class="container text-center p-5" style="width: 700px">
+    <p>
+        <div class="border rounded"><br>
+        Catered to these concentration(s): <b>{{ data['concentration'] }}</b> <br><br>
+
+        Don't procrastinate! <b>Due by {{ data['deadline'] }}</b> (ó﹏ò｡)<br><br>
+        
+        
+        <center><div><div class="col justify-content-center align-items-center" style="word-wrap: break-word; text-align: center; width: 700px;">
+            <div style="width: 500px; display: table-cell; text-align: left;">
+                Your role/program ☞ <b>{{ data['role_name'] }}</b>
+            </div>
+            <div class="ml-6" style="width: 500px; display: table-cell; text-align: left;">
+                You'll work for ☞ <b>{{ data['company'] }}</b>
+            </div>
+        </div></div></center>
+        <br><br>
+
+        <center><div><div class="col justify-content-center align-items-center" style="word-wrap: break-word; text-align: center; width: 700px;">
+            <div style="width: 500px; display: table-cell; text-align: left;">
+                Location ☞ <b>{{ data['i_location'] }}</b>
+            </div>
+            
+            <div style="width: 500px; display: table-cell; text-align: left;">
+                Pay: <b>${{ data['pay'] }}/hr</b> &emsp; ദ്ദി(˵ •̀ ᴗ - ˵ )
+            </div>
+        </div></div></center>
+        
+        <br><br>
+
+
+        Looking for class levels . . . <b>{{ data['grade'] }}</b> <br><br></div><br>
+
+        <p>Apply externally (☞ﾟヮﾟ)☞ <a href="{{ data['site_name'] }}" target="_blank"><button type="button" class="btn btn-light"><b>Apply now!</b></button> </a></p> 
+        <b><p> . . . or apply below (if avaliable)!</p></b>
+        <br><br>
+        <div style="display: flex; justify-content: center;">
+        <iframe src="{{ data['site_name'] }}" title="{{ data['company'] }}: {{ data['role_name'] }}" height="700" width="700"></iframe>
+        </div>
+    </p>
+</div>
+
+{% endblock %}
